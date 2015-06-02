@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+       
+        <meta charset="UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    
+        <script type="text/javascript" src="js/handlebars.js"></script>  
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+         <script type="text/javascript" src="jquery_mobile/jquery.mobile-1.4.3.min.js"></script>
+  
+        <title>Group Tracker</title>
+
+        <style>
+            #map-canvas{
+            padding-top:10%;
+            padding-bottom:10%;
+            height:auto;
+            position:absolute;
+            width:100%;
+            height:88%;
+            max-height:1600px;
+            overflow:hidden;
+            display:block;
+            }
+        </style>
+
+         <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+    
+    </head>
+    <body>
+
+        <div data-role="page" id="index">
+            <div data-role="header">
+                <h1>Prva stran</h1>
+            </div>
+            <div data-role="content">
+                
+                    <form id="formPrijava">
+
+                    <p>Uporabniško ime:</p>
+                    <input type="text" name="up_ime" placeholder="Uporabniško ime"/>
+                    <br>
+                    <br>
+                    <p>Geslo:</p>
+                    <input type="text" name="geslo" placeholder="geslo"/>
+                    <br>
+                    <br>
+
+                    <input type="button" onclick="javascript:login()" value="Prijava" />
+
+                    </form>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h4>Noga strani</h4>
+            </div>
+        </div>
+
+
+        <div data-role="page" id="glavnoOkno" data-position="fixed">
+            <div data-role="header" data-position="fixed" id="pageHeaderNoBack">
+                  <h1>Glavno okno</h1>
+            </div>
+            <div data-role="content" id="map-canvas">
+                
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>Noga strani</h4>
+
+            </div>
+        
+        </div>
+                        
+
+
+         <div data-role="page" id="claniSkupine">
+            <div data-role="header" data-position="fixed" id="pageHeader">
+                  <h1>Člani skupine</h1>
+            </div>
+            <div data-role="content" id="vsebinaClaniSkupine">
+             
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>Noga strani</h4>
+
+            </div>
+        
+        </div>
+
+
+
+         <div data-role="page" id="registracija">
+            <div data-role="header">
+                <h1>Registracija</h1>
+            </div>
+            <div data-role="content" id="vsebinaRegistracija">
+                 <form name="registracija">
+                <p>Uporabniško ime:</p>
+                <input type="text" name="up_ime" placeholder="Uporabniško ime"/>
+                <p>Geslo</p>
+                <input type="text" name="geslo" placeholder="geslo"/>
+                <p>Email</p>
+                <input type="text" name="email" placeholder="email"/>
+
+                <button type="button" onclick="javascript:registracija()"></button>
+                </form>
+
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>Noga strani</h4>
+
+            </div>
+        
+        </div>
+
+
+
+         <div data-role="page" id="ustvariSkupino">
+            <div data-role="header" id="pageHeader">
+              
+            </div>
+            <div data-role="content" id="vsebinaUstvariSkupino">
+                <form name="formUstvariSkupino">
+
+                <input type="text" name="ime" />
+                <input type="text" name="geslo" />
+
+                <button type="button"></button>
+                </form>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>Noga strani</h4>
+
+            </div>
+        
+        </div>
+
+
+
+
+         <div data-role="page" id="pridruziSkupini">
+            <div data-role="header" id="pageHeader">
+              
+            </div>
+            <div data-role="content" id="vsebinaPridruziSkupini">
+
+                <form name="formPridruziSkupini">
+
+                <input type="text" name="ime" />
+                <input type="text" name="geslo" />
+
+                <button type="button"></button>
+                </form>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>Noga strani</h4>
+
+            </div>
+        
+        </div>
+        
+        
+       
+       
+        <link rel="stylesheet" type="text/css" href="jquery_mobile/jquery.mobile-1.4.3.css">
+        <script src="js/persistencejs/lib/persistence.js"></script>
+        <script src="js/persistencejs/lib/persistence.store.sql.js"></script>
+        <script src="js/persistencejs/lib/persistence.store.websql.js"></script>  
+        <script type="text/javascript" src="js/bazaModel.js"></script>  
+        <script type="text/javascript" src="js/lokacija.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+        <script>
+      
+    </script>
+
+
+
+    </body>
+</html>
