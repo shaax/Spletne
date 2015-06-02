@@ -1,0 +1,20 @@
+{{title}}
+
+<form method="post" action="/priljubljene_dodaj">
+	<input type='text' name ="oznaka" placeholder="vnesi oznako" />
+	<br>
+	<input type='text' name ="koordinate" placeholder="vnesi koordinate" />
+	<br>
+	
+
+	<br>
+	<select name="uporabnik_id">
+		{{#each uporabnik}}
+			<option value="{{id}}">
+				{{id}}-({{email}}
+			</option>
+		{{/each}}
+	</select>
+	<br>
+	<input type="submit" value="Pošlji">
+</form>

@@ -1,0 +1,18 @@
+{{title}}
+
+<form method="post" action="/dogodki_dodaj">
+	<select name="uporabnik_id">
+		{{#each uporabnik}}
+			<option value="{{id}}">
+				{{id}}-({{email}}
+			</option>
+		{{/each}}
+	</select>
+	<br>
+	<input type='text' name ="cas" placeholder="vnesi cas" />
+	<br>
+	<input type='text' name ="koordinate" placeholder="vnesi koordinate" />
+	<br>	
+
+	<input type="submit" value="Pošlji">
+</form>
